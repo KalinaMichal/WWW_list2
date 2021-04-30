@@ -1,0 +1,204 @@
+:root {
+/*zmienne*/
+    /*kolory*/
+    --mycolor-color: gray;
+    /*padding i layout*/
+    --mylowpadding: 5px;
+    --mypadding: 10px;
+    --nav-height: 10vh;
+}
+/* SCROLLbar*/
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: gray;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid white;  /* creates padding around scroll thumb */
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+/* Usuwa dolny scrollbar */
+* {
+    box-sizing: border-box;
+}
+/**	koniec scrollbara */
+
+html, body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+}
+
+pre, code, code > p, code > span {
+    direction: ltr;
+    font-family: monospace;
+}
+
+/*NAVI*/
+nav {
+    min-height: var(--nav-height);
+    padding: var(--mypadding);
+    position: sticky;/*aby sie ruszal razem ze mna*/
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+
+    display: flex;/*ten flex robi rozmiar*/
+}
+
+nav > a {
+    margin: auto;
+    padding: var(--mypadding);
+    color: #ffffff;
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/*podswietlenie paska*/
+nav > a:hover {
+    background-color: var(--mycolor-color);
+}
+
+/*SITE HEADER*/
+main > header {
+    background-color: #000000;/*kolor napisow - podchodzi pod navigation*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* ustawienie napisow przy obrazkach i ogolnie taki PAGE CONTENT*/
+/* **************************************************************************** */
+section {
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row;
+}
+
+section:nth-of-type(2n) {
+    flex-flow: row-reverse;
+}
+
+section > aside, section > article {
+    width: 50%;
+}
+
+
+section > article {
+    /*padding: calc(var(--nav-height) * 1.66) var(--mypadding) var(--mypadding) var(--mypadding);*/
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+/* ustawienie napisow przy obrazkach */
+section > article > header {
+    color: var(--mycolor-alpha);
+    font-size: 4em;
+    line-height: 1;
+    font-weight: normal;
+font-family: 'Playfair Display', serif;
+}
+
+/* ustawienie opisow bardziej przy obrazkach */
+section > article > p {
+    margin: var(--mylowpadding);
+}
+/* **************************************************************************** */
+
+section > aside > figure {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+section > aside > figure > img {
+    min-height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+   section > aside{
+	display: none;
+    }
+    section > article {
+        width: 100%;
+    }
+
+    section > article > header {
+        font-size: 3em;
+    }
+}
+
+/**************************************************************************************/
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ham {
+  position: fixed;
+  /* keep the hamburger button above everything */
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.xIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
+li {
+  padding: 1rem 0;
+}
+
+.menuLink {
+  display: inline;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.menuLink:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body, html {
+    margin: 5;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+main > section {
+    display: flex;
+}
+
+form {
+    margin: 10px;
+}
+
+#gallery > img {
+    flex-flow: row wrap;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border: 2px solid gray;
+}
+

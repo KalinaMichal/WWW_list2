@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Puzzle</title>
+        <link rel="stylesheet" href="index.css">
+        <script defer src="index.js" type="module"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style="background-color:#e6e6e6;">
+        <main>
+            <form>
+                <label>
+                    Iterations:
+                    <input type="number" value="50" min="1" id="iterations">
+                </label>
+                <button id="mix">Mix up!</button>
+            </form>
+            <form>
+                <label>
+                    Rows:
+                    <input type="number" min="1" value="4" id="rows">
+                </label>
+                <label for="columns">
+                    Columns:
+                    <input type="number" min="1" value="4" id="columns">
+                </label>
+            </form>
+            <div id="gallery"></div>
+            <section>
+                <div id="canvas-container"></div>
+                <canvas id="image"></canvas>
+            </section>
+        </main>
+    </body>
+</html>
